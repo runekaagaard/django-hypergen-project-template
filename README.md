@@ -1,0 +1,1 @@
+# django-hypergen-project-template
