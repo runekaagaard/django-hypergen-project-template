@@ -5,7 +5,6 @@ from hypergen.contrib import hypergen_view, hypergen_callback, NO_PERM_REQUIRED
 
 from django.urls.base import reverse
 from django.templatetags.static import static
-from website.templates import base_head, show_sources
 
 # So this a hypergen view. If no "url" parameter is given one will be automatically assigned. "perm" is required.
 # A LOT of stuff happens under the hood and the decorator can be configured in many ways. Just go with it for now.
@@ -16,15 +15,12 @@ def counter(request):
     with html():  # tags can be nested
         with head():
             script(src=static("hypergen/hypergen.min.js"))  # html attributes are keyword arguments.
-            base_head()
         with body():
             # This id matches the "target_id" argument to the "increment" callback.
             with div(id_="body"):
                 # Render the dynamic content of the page. This happens in it's own function so that functionality
                 # can be shared between the view and the callback.
                 template(1)
-
-            show_sources(__file__)
 
 # Hypergen html is very easy to compose, just use functions.
 def template(n):
