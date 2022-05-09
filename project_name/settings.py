@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hypergen', # Hypergen must be added to serve static content.
+    'hellohypergen', # Add hypergen example app.
 ]
 
 MIDDLEWARE = [
@@ -47,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'hypergen.core.context_middleware', # Required Hypergen middleware.
 ]
 
 ROOT_URLCONF = '{{ project_name }}.urls'
