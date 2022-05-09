@@ -24,9 +24,6 @@ def counter(request):
 
 # Hypergen html is very easy to compose, just use functions.
 def template(n):
-    # Tags can take other tags as arguments.
-    p(a("Back to documentation", href=reverse("website:documentation")))
-
     h2("Hypergen counter")
     p('When you click "increment" the server tells the client to update the content on the page using morphdom.',
         "Event binding, ajax calls, routing, (de)serialization, page updating, back button support, "
