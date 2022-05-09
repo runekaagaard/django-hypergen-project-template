@@ -20,5 +20,5 @@ import hellohypergen.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('^hellohypergen/', include(hellohypergen.urls, namespace="hellohypergen")),
+    path('hellohypergen/', include(hellohypergen.urls, namespace="hellohypergen")),
 ]
