@@ -21,7 +21,7 @@ def base_template():
                     "Hello {{ project_name }}")  # arguments to elements becomes the html innerText of the element.
             script(src=static(
                 "hypergen/hypergen.min.js"))  # keyword arguments becomes html attributes of the element.
-            link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")
+            link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")  # include all you html5 boilerplate.
         with body():  # warning, don't set the target_id directly on the body element, does not work!
             h1("Hello {{ project_name }}")
             p(i("Congratulations on running your very first Django Hypergen Project!")
