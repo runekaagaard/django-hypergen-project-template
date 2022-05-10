@@ -19,10 +19,12 @@ def base_template():
             if title:
                 title("Hello {{ app_name }}")
             script(src=static("hypergen/hypergen.min.js"))
-        with body(), div(id_="content"):
+            link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")
+        with body():
             h1("Hello {{ app_name }}")
-            # The html triggered inside your views will appear here.
-            yield
+            with div(id_="content"):
+                # The html triggered inside your views will appear here.
+                yield
 
 def content_template(encrypted_message=None):
     """
@@ -31,7 +33,8 @@ def content_template(encrypted_message=None):
     p("Top secret agent? Encrypt your message with a super secret key:")
     input_(id_="message", oninput=callback(my_callback, THIS))
     if encrypted_message is not None:
-        p(b("The encrypted message is:"), encrypted_message)
+        label("The encrypted message is:")
+        pre(code(encrypted_message))
 
 @hypergen_view(perm=NO_PERM_REQUIRED, base_template=base_template)
 def my_view(request):
