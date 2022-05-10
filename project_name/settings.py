@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hypergen', # Hypergen must be added to serve static content.
-    'hellohypergen', # Add hypergen example app.
+    'hypergen_first_app', # Add hypergen example app.
 ]
 
 MIDDLEWARE = [

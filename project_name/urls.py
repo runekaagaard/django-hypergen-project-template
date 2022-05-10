@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import hellohypergen.urls
+import hypergen_first_app.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hellohypergen/', include(hellohypergen.urls, namespace="hellohypergen")),
+    path('hypergen_first_app/', include(hypergen_first_app.urls, namespace="hypergen_first_app")),
 ]
