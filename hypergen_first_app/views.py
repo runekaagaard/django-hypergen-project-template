@@ -31,12 +31,7 @@ def content_template(encrypted_message=None):
     This template is specific to your view and the callbacks belonging to it.
     """
     p("Top secret agent? Encrypt your message with a super secret key:")
-    uppercase = input_(type_="checkbox", id_="uppercase")
-
-    p(b("Scream?"), uppercase, sep=" ")
-
-    input_(id_="message", oninput=callback(my_callback, THIS,
-                                           uppercase))  # call "my_callback" on each oninput event.
+    input_(id_="message", oninput=callback(my_callback, THIS))  # call "my_callback" on each oninput event.
     pre(code(encrypted_message if encrypted_message else "Type something, dammit!"))
 
 # Views - one view is normally an entire app with callbacks as actions.
@@ -51,11 +46,8 @@ def my_view(request):
 # Callbacks - if you have a lot, move them to a callbacks.py file.
 
 @hypergen_callback(perm=NO_PERM_REQUIRED, target_id="content")
-def my_callback(request, message, uppercase):
+def my_callback(request, message):
     """
     Tells the frontend to put the output of content_template into the 'content' div.
     """
-    encrypted_message = codecs.encode(message, 'rot_13')
-    if uppercase:
-        encrypted_message = encrypted_message.upper()
-    content_template(encrypted_message)
+    content_template(codecs.encode(message, 'rot_13'))
