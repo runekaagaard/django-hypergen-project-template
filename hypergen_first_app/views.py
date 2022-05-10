@@ -22,7 +22,7 @@ def base_template():
             link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")
         with body():  # warning, don't set the id here, does not work!
             h1("Hello {{ project_name }}")
-            p(mark("Congratulations for running your very first Django Hypergen Project!"))
+            p(mark("Congratulations on running your very first Django Hypergen Project!"))
 
             with div(id_="content"):  # see target_id below.
                 # The html triggered inside your views will appear here.
@@ -30,7 +30,8 @@ def base_template():
             h1("Where to go from here?")
             with ul():
                 li("Play around with the source at", code("./hypergen_first_app/views.py"), sep=" ")
-                li("Check out the", a("documentation", href="https://hypergen.it/documentation/"))
+                li("Check out the ", a("documentation", href="https://hypergen.it/documentation/"), ".", sep=" ")
+                li("Go crazy 24/7!")
 
 def content_template(encrypted_message=None):
     """
