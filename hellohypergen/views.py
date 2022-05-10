@@ -17,7 +17,7 @@ def base_template():
     with html():
         with head():
             if title:
-                title("Hello {{ app_name }}")
+                title("Hello {{ project_name }}")
             script(src=static("hypergen/hypergen.min.js"))
             link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")
         with body():
