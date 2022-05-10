@@ -31,8 +31,10 @@ def content_template(encrypted_message=None):
     This template is specific to your view and the callbacks belonging to it.
     """
     p("Top secret agent? Encrypt your message with a super secret key:")
-    label("Scream?")
     uppercase = input_(type_="checkbox", id_="uppercase")
+
+    p(b("Scream?"), uppercase, sep=" ")
+
     input_(id_="message", oninput=callback(my_callback, THIS,
                                            uppercase))  # call "my_callback" on each oninput event.
     pre(code(encrypted_message if encrypted_message else "Type something, dammit!"))
