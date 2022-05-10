@@ -21,7 +21,7 @@ def base_template():
             script(src=static("hypergen/hypergen.min.js"))
             link("https://unpkg.com/simpledotcss@2.0.7/simple.min.css")
         with body():
-            h1("Hello {{ app_name }}")
+            h1("Hello {{ project_name }}")
             with div(id_="content"):
                 # The html triggered inside your views will appear here.
                 yield
