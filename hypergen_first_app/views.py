@@ -50,4 +50,4 @@ def my_callback(request, message):
     """
     Tells the frontend to put the output of content_template into the 'content' div.
     """
-    content_template(codecs.encode(message, 'rot_13'))
+    content_template(codecs.encode(message if message is not None else "", 'rot_13'))
