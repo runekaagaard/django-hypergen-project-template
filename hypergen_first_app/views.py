@@ -43,6 +43,10 @@ def base_template():
                 li("Check out the full", a("documentation", href="https://hypergen.it/documentation/"), sep=" ")
                 li("Drop by and", a("say hi", href="https://github.com/runekaagaard/django-hypergen/discussions"),
                    "- we would love to talk to you!", sep=" ")
+                li(
+                    "Add ",
+                    a("bug reports and features requests",
+                      href="https://github.com/runekaagaard/django-hypergen/issues"))
                 li("Go crazy 24/7!")
 
 def content_template(encrypted_message=None):
