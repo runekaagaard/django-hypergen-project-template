@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.shortcuts import redirect
 from django.urls import path, include
 
 import hypergen_first_app.urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', lambda request: redirect('/hypergen_first_app/my_view/', permanent=False)),
     path('hypergen_first_app/', include(hypergen_first_app.urls, namespace="hypergen_first_app")),
 ]
