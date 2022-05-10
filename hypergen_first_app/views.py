@@ -38,7 +38,7 @@ def base_template():
                     code("./hypergen_first_app/views.py"),
                     sep=" ",  # arguments are joined by a " " separator.
                 )
-                li("Read the", a("Getting Started", href="https://hypergen.it/gettingstarted/begin/"), "guide",
+                li("Read the", a("getting started", href="https://hypergen.it/gettingstarted/begin/"), "guide",
                    sep=" ")
                 li("Check out the full", a("documentation", href="https://hypergen.it/documentation/"), sep=" ")
                 li("Drop by and", a("say hi", href="https://github.com/runekaagaard/django-hypergen/discussions"),
