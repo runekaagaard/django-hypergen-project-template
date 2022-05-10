@@ -32,9 +32,7 @@ def content_template(encrypted_message=None):
     """
     p("Top secret agent? Encrypt your message with a super secret key:")
     input_(id_="message", oninput=callback(my_callback, THIS))
-    if encrypted_message is not None:
-        label("The encrypted message is:")
-        pre(code(encrypted_message))
+    pre(code(encrypted_message if encrypted_message else "Type something, dammit!"))
 
 @hypergen_view(perm=NO_PERM_REQUIRED, base_template=base_template)
 def my_view(request):
