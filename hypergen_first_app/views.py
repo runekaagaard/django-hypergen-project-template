@@ -38,7 +38,9 @@ def base_template():
                     code("./hypergen_first_app/views.py"),
                     sep=" ",  # arguments are joined by a " " separator.
                 )
-                li("Check out the", a("documentation", href="https://hypergen.it/documentation/"), sep=" ")
+                li("Read the", a("Getting Started", href="https://hypergen.it/gettingstarted/begin/"), "guide",
+                   sep=" ")
+                li("Check out the full", a("documentation", href="https://hypergen.it/documentation/"), sep=" ")
                 li("Go crazy 24/7!")
 
 def content_template(encrypted_message=None):
