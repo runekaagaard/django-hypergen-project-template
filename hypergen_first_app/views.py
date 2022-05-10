@@ -30,7 +30,7 @@ def base_template():
             h1("Where to go from here?")
             with ul():
                 li("Play around with the source at", code("./hypergen_first_app/views.py"), sep=" ")
-                li("Check out the ", a("documentation", href="https://hypergen.it/documentation/"), ".", sep=" ")
+                li("Check out the ", a("documentation", href="https://hypergen.it/documentation/"), ".")
                 li("Go crazy 24/7!")
 
 def content_template(encrypted_message=None):
