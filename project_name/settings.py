@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'hypergen.core.context_middleware', # Required Hypergen middleware.
+    'hypergen.context.context_middleware', # Required Hypergen middleware.
 ]
 
 ROOT_URLCONF = '{{ project_name }}.urls'
